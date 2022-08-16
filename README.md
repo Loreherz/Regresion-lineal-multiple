@@ -75,3 +75,9 @@ Cuando está presente un predictor categórico, el proceso de selección es más
 Se informa de la fuerza predictiva para el modelo seleccionado, así como las líneas de ajuste adecuadas en función del modelo y del número de categorías en el predictor categórico que se selecciona, si existe. El número de categorías en el predictor categórico se limita a 3 para reducir el número de líneas de ajuste visualizadas.
 
 Fuente : https://www.ibm.com/docs/es/cognos-analytics/11.1.0?topic=tests-multiple-linear-regression
+
+
+![lm image](https://user-images.githubusercontent.com/104876546/184981689-164426ba-22ae-4b7e-8700-51a32f1d8c28.png)
+
+
+
