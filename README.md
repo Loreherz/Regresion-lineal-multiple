@@ -76,10 +76,11 @@ Se informa de la fuerza predictiva para el modelo seleccionado, as√≠ como las l√
 
 Fuente : https://www.ibm.com/docs/es/cognos-analytics/11.1.0?topic=tests-multiple-linear-regression
 
-    ![lm image](https://user-images.githubusercontent.com/104876546/184981689-164426ba-22ae-4b7e-8700-51a32f1d8c28.png)
+    
 
 
 
+![lm image](https://user-images.githubusercontent.com/104876546/184982092-a0ee892c-fa2d-445e-80ac-6c1d10283d3e.png)
 
 
 
