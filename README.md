@@ -9,34 +9,61 @@ La regresión lineal se utiliza para generar conocimientos para los gráficos qu
 Aprobar y probar el modelo
 Múltiples modelos lineales están equipados con los pasos siguientes:
 
-Construya una matriz de diseño que contenga una fila por cada fila de datos y una columna por cada parámetro en el modelo de regresión. Las columnas corresponden a los predictores o a las categorías de predictores.
-Calcule los coeficientes de regresión.
-Multiplique la matriz de diseño transpuesta consigo misma.
-Multiplique la matriz de diseño transpuesta con el vector de valores de destino.
-Multiplique la inversa de la matriz del paso a por la matriz del paso b.
+1. Construya una matriz de diseño que contenga una fila por cada fila de datos y una columna por cada parámetro en el modelo de regresión. Las columnas corresponden a los predictores o a las categorías de predictores.
+
+2. Calcule los coeficientes de regresión.
+
+a) Multiplique la matriz de diseño transpuesta consigo misma.
+
+b) Multiplique la matriz de diseño transpuesta con el vector de valores de destino.
+
+c) Multiplique la inversa de la matriz del paso a por la matriz del paso b.
+
 Utilizando los coeficientes de regresión obtenidos, se calculan los valores de destino pronosticados para cada fila de datos. Las diferencias entre los valores de objetivo pronosticados y observados se denominan residuos. A continuación, el modelo se prueba para que sea significativo con la prueba F tal como se indica a continuación.
 
-Calcule el cuadrado medio para el origen de error (la varianza no explicada).
-Calcule la suma de cuadrados de los residuos.
-Tome el cuadrado de cada residuo y añádalos.
-Divida la suma de cuadrados para la fuente de error por los grados de libertad apropiados.
-Calcule el cuadrado medio para el modelo de regresión (la varianza explicada).
-Calcule la suma de cuadrados para el modelo.
-Para cada fila, reste la media global del valor de destino previsto.
-Tome el cuadrado de cada uno de estos resultados y añádalos.
-Divida la suma de cuadrados para el modelo de regresión por los grados de libertad apropiados.
-Divida el cuadrado medio para el modelo de regresión por el cuadrado medio de la fuente de error. En otras palabras, calcule la proporción de la varianza explicada a la varianza no explicada. Esta proporción es el valor F.
+1. Calcule el cuadrado medio para el origen de error (la varianza no explicada).
+
+a) Calcule la suma de cuadrados de los residuos.
+
+        Tome el cuadrado de cada residuo y añádalos.
+
+b) Divida la suma de cuadrados para la fuente de error por los grados de libertad apropiados.
+
+
+
+2. Calcule el cuadrado medio para el modelo de regresión (la varianza explicada).
+
+a) Calcule la suma de cuadrados para el modelo.
+
+     -Para cada fila, reste la media global del valor de destino previsto.
+
+     -Tome el cuadrado de cada uno de estos resultados y añádalos.
+     
+
+b) Divida la suma de cuadrados para el modelo de regresión por los grados de libertad apropiados.
+
+3. Divida el cuadrado medio para el modelo de regresión por el cuadrado medio de la fuente de error. En otras palabras, calcule la proporción de la varianza explicada a la varianza no explicada. Esta proporción es el valor F.
+
 El valor F se compara con una distribución de F teórica para determinar la probabilidad de obtener el valor F por casualidad.
 
-Este es el valor de significación.
-Si el valor de significación es menor que el nivel de significación, los medios son significativamente diferentes.
+-Este es el valor de significación.
+-Si el valor de significación es menor que el nivel de significación, los medios son significativamente diferentes.
+
+
 Se utiliza R2 ajustado para estimar la fuerza predictiva del modelo de regresión. El nivel de significación se establece en 5 % y la potencia predictiva del modelo debe ser mayor que 10 % para indicar una relación de predicción fiable entre el destino y un campo de entrada.
+
+
+
 Selección de modelo
+
+
 El procedimiento de selección de modelos depende de si un predictor categórico está presente o no. Cuando sólo se especifica un predictor continuo, se tienen en cuenta los tres modelos siguientes.
 
-Un modelo constante que siempre predice la media general.
-El modelo lineal con el predictor único se ha añadido a la constante.
-Modelo cuadrático en el que se añade el predictor cuadrado al modelo lineal.
+1. Un modelo constante que siempre predice la media general.
+2. El modelo lineal con el predictor único se ha añadido a la constante.
+3. Modelo cuadrático en el que se añade el predictor cuadrado al modelo lineal.
+
+
 El modelo cuadrático se selecciona si es significativo y proporciona una mejora relativa en la potencia predictiva de al menos un 10 % sobre el modelo lineal. Si se selecciona, la línea de ajuste cuadrático se notifica junto con la fuerza predictiva del modelo.
 
 De lo contrario, se selecciona el modelo lineal si cumple las mismas condiciones cuando se compara con el modelo constante. Si se selecciona, la línea de ajuste lineal se notifica junto con la fuerza predictiva del modelo.
